@@ -1,7 +1,7 @@
 ## Author
 
 **Yasir Shaikh **  
-GitHub: https://github.com/YasirShaikh03/startup-ai-project/edit/main/README.md
+GitHub: https://github.com/YasirShaikh03
 
 # Startup Intelligence Platform — Pro Edition
 
@@ -186,4 +186,4 @@ MIT — do whatever you want with it.
 ## Author
 
 **Yasir Shaikh **  
-GitHub: https://github.com/YasirShaikh03/startup-ai-project/edit/main/README.md
+GitHub: https://github.com/YasirShaikh03
