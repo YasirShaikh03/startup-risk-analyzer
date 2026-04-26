@@ -11,12 +11,16 @@
 <body>
 <div class="app">
 
-  
+  <!-- HEADER -->
   <div class="header fade-in">
     <div class="header-top">
-      <div class="badge"><span class="dot"></span> PRO EDITION · ML ENGINE · CHARTS · HISTORY</div>
+      <div class="badge"><span class="dot"></span> PRO EDITION · ML ENGINE · CLAUDE AI · CHARTS · HISTORY</div>
       <div class="header-actions">
         <button class="btn-hist" onclick="toggleHist()">📋 History (<span id="hcnt">0</span>)</button>
+        <div class="idea-mode-wrap">
+          <button class="idea-tab active" id="tab-have-idea" onclick="setIdeaMode('have')">💡 I HAVE IDEA</button>
+          <button class="idea-tab" id="tab-gen-idea" onclick="setIdeaMode('generate')">🤖 GENERATE IDEA</button>
+        </div>
         <div class="mode-wrap">
           <span class="mode-lbl">🚀 Startup</span>
           <div class="toggle" id="modetog" onclick="toggleMode()"><div class="knob" id="knob"></div></div>
@@ -48,7 +52,7 @@
     <p class="subtitle" id="msubtitle">ML-adaptive scoring engine + Claude AI deep analysis. From SaaS startups to street food stalls.</p>
   </div>
 
-  <!-- history panel -->
+  <!-- HISTORY PANEL -->
   <div id="hpanel" class="hist-panel hidden">
     <div class="hist-hdr">
       <span class="hist-title">📋 ANALYSIS HISTORY</span>
@@ -61,10 +65,32 @@
     <div id="hlist"></div>
   </div>
 
-  
+  <!-- GENERATE IDEA PANEL -->
+  <div id="gen-idea-panel" class="hidden">
+    <div class="card fade-in" style="border-color:rgba(167,139,250,.35)">
+      <div class="sec-title">🤖 AI Idea Generator</div>
+      <p class="desc-hint">No startup idea? No problem. Fill in a few basics and our engine will generate a complete, scored business concept for you.</p>
+      <div class="form-grid">
+        <div class="fg"><label>Your City / Location</label><input type="text" id="gen-city" placeholder="e.g. Mumbai, Pune, Bangalore"/></div>
+        <div class="fg"><label>Locality / Area</label><input type="text" id="gen-area" placeholder="e.g. Andheri, Koramangala"/></div>
+        <div class="fg"><label>Budget / Funding Available</label><select id="gen-budget"><option value="">Select</option><option>Under ₹50K</option><option>₹50K – ₹2L</option><option>₹2L – ₹10L</option><option>₹10L – ₹50L</option><option>₹50L – ₹1Cr</option><option>₹1Cr+</option></select></div>
+        <div class="fg"><label>Market Trend Interest</label><select id="gen-trend"><option value="">Select</option><option>AI / Technology</option><option>Food & Beverage</option><option>Health & Wellness</option><option>Education</option><option>E-Commerce / Retail</option><option>Finance / Fintech</option><option>Sustainability / Green</option><option>Entertainment / Content</option><option>Any (surprise me!)</option></select></div>
+        <div class="fg"><label>Competition Preference</label><select id="gen-comp"><option value="">Select</option><option>Blue ocean (no competitors)</option><option>Low competition niche</option><option>Moderate competition OK</option></select></div>
+        <div class="fg"><label>Footfall / Location Type</label><select id="gen-footfall"><option value="">Select</option><option>High (market / station area)</option><option>Medium (mixed area)</option><option>Low (residential / quiet)</option><option>Online / Digital only</option></select></div>
+      </div>
+      <div class="btn-wrap" style="margin-top:.5rem">
+        <button class="btn btn-generate" id="gen-btn" onclick="generateIdea()">
+          <span id="gen-ico">✨</span> <span id="gen-txt">GENERATE MY STARTUP IDEA</span>
+        </button>
+      </div>
+      <div id="gen-result" style="margin-top:1rem"></div>
+    </div>
+  </div>
+
+  <!-- FORM VIEW -->
   <div id="fv">
 
-    <!-- business type -->
+    <!-- BUSINESS TYPE -->
     <div class="card fade-in">
       <div class="sec-title">🏢 Business Type</div>
       <div class="biz-grid" id="bizgrid">
@@ -78,7 +104,6 @@
         <div class="biz-tile" data-v="Manufacturing"  onclick="selBiz(this)">🏭<span>Mfg.</span></div>
       </div>
       <input type="hidden" id="biz-type"/>
-      <!-- street food extra fields -->
       <div id="sf-fields" class="sf-block hidden">
         <div class="sf-banner">🍜 Street Food Mode Unlocked — Special Parameters Active</div>
         <div class="form-grid">
@@ -86,13 +111,9 @@
           <div class="fg"><label>Stall Type</label><select id="stall-type"><option value="">Select</option><option>Hand Cart (Mobile)</option><option>Permanent Shop</option><option>Temporary Stall</option><option>Food Truck</option><option>Home-based Delivery</option></select></div>
           <div class="fg"><label>Daily Customers</label><input type="number" id="daily-cust" placeholder="e.g. 150"/></div>
           <div class="fg"><label>Avg Price/Item (₹)</label><input type="number" id="avg-price" placeholder="e.g. 30"/></div>
-          <!-- Author
-Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
           <div class="fg"><label>Peak Hours</label><select id="peak-hrs"><option value="">Select</option><option>Morning (6am–10am)</option><option>Afternoon (12pm–3pm)</option><option>Evening (4pm–8pm)</option><option>Night (8pm–12am)</option><option>All Day</option><option>Morning + Evening</option></select></div>
           <div class="fg"><label>Hygiene Level</label><select id="hygiene"><option value="">Select</option><option>Basic</option><option>Moderate</option><option>High</option></select></div>
           <div class="fg"><label>Repeat Customer Rate (%)</label><input type="number" id="repeat-rate" placeholder="e.g. 60" min="0" max="100"/></div>
-                  <!-- Author
-Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
           <div class="fg"><label>Taste Rating (1–10)</label><input type="number" id="taste-rating" placeholder="e.g. 8" min="1" max="10"/></div>
           <div class="fg"><label>Daily Waste (%)</label><input type="number" id="daily-waste" placeholder="e.g. 10" min="0" max="100"/></div>
           <div class="fg"><label>RM Cost Variability</label><select id="rm-var"><option value="">Select</option><option>Stable (vegetable / grain based)</option><option>Moderate (mixed ingredients)</option><option>High (seasonal / imported)</option></select></div>
@@ -102,7 +123,7 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    <!-- location -->
+    <!-- LOCATION -->
     <div class="card fade-in" style="animation-delay:.04s">
       <div class="sec-title">📍 Location & Geography</div>
       <div class="form-grid">
@@ -112,8 +133,6 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
         <div class="fg"><label>Footfall Density</label><select id="footfall"><option value="">Select</option><option>Low (residential / quiet)</option><option>Medium (mixed area)</option><option>High (market / station)</option><option>Very High (prime location)</option></select></div>
         <div class="fg"><label>Nearby Landmarks</label><select id="landmarks"><option value="">Select</option><option>Railway Station</option><option>College / University</option><option>Office Hub / IT Park</option><option>Shopping Mall</option><option>Hospital</option><option>School</option><option>Market / Bazaar</option><option>Multiple Landmarks</option></select></div>
         <div class="fg"><label>Monthly Rent (₹)</label><input type="number" id="rent" placeholder="e.g. 15000"/></div>
-                <!-- Author
-Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
         <div class="fg"><label>Area Competition</label><select id="area-comp"><option value="">Select</option><option>None — first in area</option><option>Low (1–3 competitors)</option><option>Medium (4–10 competitors)</option><option>High (10+ competitors)</option><option>Saturated</option></select></div>
         <div class="fg"><label>Distance from Station</label><select id="dist-sta"><option value="">Select</option><option>Under 100m (walking distance)</option><option>100m – 500m</option><option>500m – 2km</option><option>2km+</option></select></div>
         <div class="fg"><label>Distance from College</label><select id="dist-col"><option value="">Select</option><option>Under 100m</option><option>100m – 500m</option><option>500m – 2km</option><option>2km+</option></select></div>
@@ -121,7 +140,7 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    <!-- founder & team -->
+    <!-- FOUNDER & TEAM -->
     <div class="card fade-in" style="animation-delay:.08s">
       <div class="sec-title">👤 Founder & Team</div>
       <div class="form-grid">
@@ -134,7 +153,7 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    <!-- revenue & funding -->
+    <!-- REVENUE & FUNDING -->
     <div class="card fade-in" style="animation-delay:.12s">
       <div class="sec-title">💰 Revenue & Funding</div>
       <div class="form-grid">
@@ -145,8 +164,6 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
         <div class="fg"><label>Market Size (TAM)</label><select id="msize"><option value="">Select</option><option>Hyper Local (1 area)</option><option>City Level</option><option>State Level</option><option>National (India)</option><option>International</option></select></div>
         <div class="fg"><label>Daily Revenue (₹)</label><input type="number" id="d-rev" placeholder="e.g. 2500"/></div>
         <div class="fg"><label>Monthly Revenue (₹)</label><input type="number" id="m-rev" placeholder="e.g. 75000"/></div>
-                <!-- Author
-Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
         <div class="fg"><label>Profit Margin (%)</label><input type="number" id="margin" placeholder="e.g. 55" min="0" max="100"/></div>
         <div class="fg"><label>Monthly Growth Rate (%)</label><input type="number" id="g-rate" placeholder="e.g. 15"/></div>
         <div class="fg"><label>Cost per Unit (₹)</label><input type="number" id="cost-unit" placeholder="e.g. 15"/></div>
@@ -155,7 +172,7 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    <!-- market & competition -->
+    <!-- MARKET & COMPETITION -->
     <div class="card fade-in" style="animation-delay:.16s">
       <div class="sec-title">⚔️ Market & Competition</div>
       <div class="form-grid">
@@ -168,7 +185,7 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    <!-- risk & digital -->
+    <!-- RISK & DIGITAL -->
     <div class="card fade-in" style="animation-delay:.20s">
       <div class="sec-title">⚠️ Risk & Digital</div>
       <div class="form-grid">
@@ -183,15 +200,13 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    <!-- description -->
+    <!-- DESCRIPTION -->
     <div class="card fade-in" style="animation-delay:.24s">
       <div class="sec-title">📝 Business Description</div>
       <p class="desc-hint">
         ✨ <strong>Claude AI-Powered</strong> — Describe your business in your own words.
         The Claude AI engine reads this along with all your form data to generate a fully personalised analysis directly in your browser.
         <em>No backend server required — works entirely client-side.</em>
-                <!-- Author
-Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </p>
       <div class="fg full">
         <label>What does your business do — USP, biggest challenge, and 12-month goal</label>
@@ -199,24 +214,22 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
       </div>
     </div>
 
-    
+    <!-- ANALYZE BUTTON -->
     <div class="btn-wrap fade-in">
       <button class="btn btn-primary" id="abtn" onclick="runAnalysis()">
         <span id="bico">▶</span> <span id="btxt">ANALYZE & PREDICT</span>
       </button>
     </div>
 
-  </div>
+  </div><!-- /#fv -->
 
-  <!-- loading state -->
+  <!-- LOADING -->
   <div id="lv" class="hidden">
     <div class="card">
       <div class="loading">
         <div class="spinner"></div>
         <div class="loading-content">
           <div class="loading-text" id="lmsg">RUNNING ML ENGINE</div>
-                  <!-- Author
-Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
           <div class="progress-bar"><div class="progress-fill" id="progfill"></div></div>
           <div class="loading-sub" id="lsub">Analyzing signals...</div>
         </div>
@@ -224,16 +237,31 @@ Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->
     </div>
   </div>
 
-  <!-- results -->
+  <!-- RESULT VIEW -->
   <div id="rv" class="hidden"></div>
 
   <footer>
     STARTUP INTELLIGENCE PLATFORM — PRO EDITION &nbsp;·&nbsp;
-    ML ENGINE &nbsp;·&nbsp; CHARTS &nbsp;·&nbsp; HISTORY
+    ML ENGINE &nbsp;·&nbsp; CLAUDE AI &nbsp;·&nbsp; CHARTS &nbsp;·&nbsp; HISTORY
+    <span id="author-credit" class="author-credit"></span>
   </footer>
 
 </div><!-- /.app -->
 
   <script src="script.js"></script>
+  <script>
+    // Author credit — visible only between 9:00 PM and 10:00 PM local time
+    (function() {
+      const now = new Date();
+      const hour = now.getHours();
+      if (hour >= 21 && hour < 22) {
+        const el = document.getElementById('author-credit');
+        if (el) {
+          el.innerHTML = ' &nbsp;·&nbsp; Author: <strong>Yasir Shaikh</strong> &nbsp;·&nbsp; <a href="https://github.com/YasirShaikh03" target="_blank" class="footer-gh-link">GitHub: YasirShaikh03</a>';
+          el.style.display = 'inline';
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
