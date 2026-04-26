@@ -208,16 +208,16 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--b);font-family:var(--mono);font-size:9px;color:var(--mu);letter-spacing:.07em}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--surface)}::-webkit-scrollbar-thumb{background:var(--b2);border-radius:3px}
 
-/* pdf & share buttons */
+/* ── PDF + SHARE BUTTONS ── */
 .btn-pdf{border-color:rgba(192,57,43,.35);color:var(--re)}
 .btn-pdf:hover{border-color:var(--re);color:var(--re);background:rgba(192,57,43,.06)}
 .btn-share{border-color:rgba(0,161,155,.35);color:var(--mint)}
 .btn-share:hover{border-color:var(--mint);background:var(--mint-dim)}
 
-/* share toast */
+/* ── SHARE TOAST ── */
 .share-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--mint);color:var(--mint-dark);font-family:var(--mono);font-size:10px;padding:8px 20px;border-radius:20px;letter-spacing:.06em;z-index:9999;box-shadow:0 4px 20px rgba(0,161,155,.15);animation:fi .3s ease both}
 
-/* benchmark comparison */
+/* ── BENCHMARK COMPARISON ── */
 .bm-legend{display:flex;gap:16px;margin-bottom:.75rem;font-family:var(--mono);font-size:8px;color:var(--mu);letter-spacing:.05em}
 .bm-leg-item{display:flex;align-items:center;gap:5px}
 .bm-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);display:inline-block}
@@ -232,7 +232,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .bm-vals{display:flex;align-items:center;gap:2px;font-size:.75rem}
 .bm-summary{margin-top:.85rem;padding:.65rem .85rem;background:var(--bg-secondary);border-radius:5px;border-left:3px solid var(--mint);font-size:.82rem;color:var(--tx);line-height:1.6}
 
-/* advanced forecast */
+/* ── ADVANCED FORECAST ── */
 .forecast-ctrl-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end;padding:.6rem 0}
 .fc-item{display:flex;flex-direction:column;gap:4px;flex:1;min-width:120px}
 .fc-item label{font-family:var(--mono);font-size:8px;color:var(--mu);letter-spacing:.07em;text-transform:uppercase}
@@ -245,7 +245,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .fc-sum-val{font-family:var(--mono);font-size:1rem;font-weight:700;margin-bottom:2px}
 .fc-sum-lbl{font-size:8px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}
 
-/* chat */
+/* ── MULTI-TURN CHAT ── */
 .chat-msgs{max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:.55rem;padding:.25rem 0;margin-bottom:.65rem;scroll-behavior:smooth}
 .chat-msg{display:flex}
 .chat-user{justify-content:flex-end}
@@ -268,7 +268,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .chat-send:hover{background:var(--maroon-dark);transform:translateY(-1px)}
 .chat-send:disabled{opacity:.45;cursor:not-allowed;transform:none}
 
-/* print */
+/* ── PRINT STYLES ── */
 @media print{
   .header-actions,.btn-wrap,.hist-panel,#fv,.reset-row,.btn-exp,.exp-row,
   .chat-input-row,.chat-suggestions,#ai-chat-section .sec-title .ai-badge,
@@ -278,7 +278,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
   .chart-grid{grid-template-columns:1fr 1fr!important}
 }
 
-/* what-if scenarios */
+/* ── WHAT-IF ENGINE ── */
 .whatif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.75rem}
 @media(max-width:600px){.whatif-grid{grid-template-columns:repeat(2,1fr)}}
 .wi-card{display:flex;align-items:center;gap:7px;padding:.6rem .75rem;background:var(--surface);border:1px solid var(--b);border-radius:6px;cursor:pointer;transition:all .15s;font-size:.78rem;color:var(--tx)}
@@ -299,7 +299,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .wi-dim-arr small{font-size:.65rem}
 .wi-note{font-size:.78rem;color:var(--mu);line-height:1.6;padding:.5rem .65rem;background:var(--mint-dim);border-left:2px solid var(--mint);border-radius:3px}
 
-/* break-even calculator */
+/* ── BREAK-EVEN CALCULATOR ── */
 .be-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:.75rem}
 @media(max-width:500px){.be-controls{grid-template-columns:1fr}}
 .be-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
@@ -309,7 +309,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .be-lbl{font-size:8px;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}
 .be-warn{background:var(--rd);border:1px solid rgba(239,68,68,.25);border-radius:4px;padding:.55rem .8rem;font-size:.8rem;color:var(--re)}
 
-/* funding readiness */
+/* ── FUNDING READINESS ── */
 .fund-row{display:flex;align-items:center;gap:8px;margin-bottom:.55rem;flex-wrap:wrap}
 .fund-label{font-family:var(--mono);font-size:8.5px;color:var(--tx);min-width:160px;flex-shrink:0}
 .fund-bar-wrap{flex:1;height:6px;background:var(--surface);border-radius:3px;overflow:hidden;min-width:80px}
@@ -318,7 +318,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .fund-tip{font-size:.72rem;color:var(--mu);flex-basis:100%;padding-left:168px;line-height:1.4;margin-top:1px}
 .fund-action{margin-top:.85rem;padding:.65rem .85rem;background:var(--mint-dim);border:1px solid rgba(0,161,155,.2);border-radius:5px;font-size:.8rem;color:var(--tx);line-height:1.6}
 
-/* scheme matcher */
+/* ── SCHEME MATCHER ── */
 .scheme-note{font-size:.78rem;color:var(--mu);margin-bottom:.75rem;padding:.5rem .7rem;background:var(--mint-dim);border-radius:4px;border-left:3px solid var(--mint)}
 .scheme-card{background:var(--card2);border:1px solid var(--b2);border-radius:6px;padding:.85rem;margin-bottom:.6rem;transition:var(--transition)}
 .scheme-card:hover{border-color:var(--mint)}
@@ -331,7 +331,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .scheme-link{font-family:var(--mono);font-size:8px;color:var(--mint-dark);text-decoration:none;letter-spacing:.05em}
 .scheme-link:hover{text-decoration:underline}
 
-/* compliance checklist */
+/* ── COMPLIANCE CHECKLIST ── */
 .comp-urgent-hdr,.comp-normal-hdr{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--maroon);margin-bottom:.5rem;text-transform:uppercase}
 .comp-urgent-hdr{color:var(--re)}
 .comp-item{display:flex;align-items:flex-start;gap:9px;padding:.55rem .7rem;border-radius:5px;margin-bottom:.4rem;background:var(--card);border:1px solid var(--b)}
@@ -344,7 +344,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .comp-link{font-family:var(--mono);font-size:8px;color:var(--mint-dark);text-decoration:none;padding:3px 8px;border:1px solid rgba(0,161,155,.3);border-radius:3px;white-space:nowrap;flex-shrink:0;align-self:center}
 .comp-link:hover{background:var(--mint-dim)}
 
-/* pitch deck */
+/* ── PITCH DECK ── */
 .pitch-deck{border:1px solid rgba(139,0,74,.15);border-radius:8px;overflow:hidden}
 .pitch-header{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;background:var(--maroon-dim);border-bottom:1px solid rgba(139,0,74,.15)}
 .pitch-title-lbl{font-family:var(--mono);font-size:9px;color:var(--maroon);letter-spacing:.07em}
@@ -359,7 +359,7 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .slide-line{margin-bottom:2px}
 .slide-note{margin-top:.6rem;font-size:.7rem;color:var(--mu);border-top:1px solid var(--b);padding-top:.45rem;line-height:1.5}
 
-/* business plan */
+/* ── BUSINESS PLAN ── */
 .bizplan-wrap{border:1px solid rgba(0,161,155,.2);border-radius:8px;overflow:hidden}
 .bizplan-cover{text-align:center;padding:1.5rem 1rem;background:var(--mint-dim);border-bottom:1px solid rgba(0,161,155,.15)}
 .bizplan-title{font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--br);margin-bottom:4px}
@@ -370,10 +370,69 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .bizplan-sec-hdr{font-family:var(--mono);font-size:.78rem;color:var(--maroon);letter-spacing:.07em;margin-bottom:.65rem;font-weight:700}
 .bizplan-sec-body p{font-size:.82rem;color:var(--tx);line-height:1.72;margin-bottom:.45rem}
 
-/* tracker */
+/* ── IDEA MODE TABS ── */
+.idea-mode-wrap{display:flex;gap:3px;background:var(--card2);border:1px solid var(--b2);border-radius:5px;padding:3px}
+.idea-tab{background:transparent;border:none;color:var(--mu);font-family:var(--mono);font-size:9px;padding:4px 10px;border-radius:3px;cursor:pointer;letter-spacing:.05em;transition:all .15s;white-space:nowrap}
+.idea-tab.active{background:var(--maroon);color:#fff}
+.idea-tab:hover:not(.active){color:var(--tx);background:var(--b)}
 
+/* ── GENERATE IDEA PANEL ── */
+.btn-generate{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;box-shadow:0 4px 14px rgba(124,58,237,.3)}
+.btn-generate:hover{background:linear-gradient(135deg,#6d28d9,#9d6ffd);transform:translateY(-1px)}
+.btn-generate:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.gen-loading{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--card2);border-radius:6px;font-size:.82rem;color:var(--mu)}
+.gen-card{background:var(--card2);border:1px solid rgba(167,139,250,.3);border-radius:10px;padding:1.25rem}
+.gen-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:1rem}
+.gen-name{font-size:1.35rem;font-weight:800;color:var(--br);letter-spacing:-.02em;line-height:1.2}
+.gen-model{font-size:.82rem;color:var(--mu);margin-top:4px;line-height:1.5}
+.gen-risk-badge{font-family:var(--mono);font-size:9px;padding:4px 10px;border-radius:12px;letter-spacing:.05em;white-space:nowrap;flex-shrink:0}
+.gen-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1rem}
+@media(max-width:540px){.gen-grid{grid-template-columns:1fr}}
+.gen-item{background:var(--card);border:1px solid var(--b);border-radius:6px;padding:.6rem .8rem}
+.gen-item-full{grid-column:1/-1}
+.gen-label{font-family:var(--mono);font-size:9px;color:var(--mu);letter-spacing:.06em;margin-bottom:3px}
+.gen-value{font-size:.83rem;color:var(--tx);line-height:1.5}
+.gen-desc{font-style:italic;color:var(--mu)!important}
+.gen-actions{display:flex;gap:.65rem;flex-wrap:wrap}
 
-/* comparison engine */
+/* ── STATUS BLOCK ── */
+.status-block{animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ── IDEA SUMMARY BOX ── */
+.idea-summary-box{background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(96,165,250,.06));border:1px solid rgba(167,139,250,.3);border-radius:10px;padding:1rem 1.25rem}
+.idea-sum-lbl{font-family:var(--mono);font-size:9px;color:#a78bfa;letter-spacing:.1em;margin-bottom:.4rem}
+.idea-sum-name{font-size:1.2rem;font-weight:800;color:var(--br);margin-bottom:.3rem}
+.idea-sum-desc{font-size:.82rem;color:var(--mu);line-height:1.6;font-style:italic}
+
+/* ── STRENGTHS & WEAKNESSES ── */
+.sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.sw-grid{grid-template-columns:1fr}}
+.sw-col-title{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.65rem}
+.sw-item{margin-bottom:.7rem}
+.sw-bar-wrap{height:5px;background:var(--b);border-radius:3px;margin-bottom:.35rem;overflow:hidden}
+.sw-bar{height:100%;border-radius:3px;transition:width .5s ease}
+.sw-row{display:flex;align-items:center;justify-content:space-between;gap:.4rem}
+.sw-label{font-size:.8rem;color:var(--tx)}
+.sw-score{font-family:var(--mono);font-size:.8rem;font-weight:700}
+
+/* ── IMPROVEMENT SUGGESTIONS ── */
+.sugg-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media(max-width:600px){.sugg-grid{grid-template-columns:1fr}}
+.sugg-item{display:flex;gap:.75rem;background:var(--card2);border:1px solid var(--b);border-radius:8px;padding:.8rem;align-items:flex-start}
+.sugg-icon{font-size:1.4rem;flex-shrink:0;line-height:1.3}
+.sugg-title{font-family:var(--mono);font-size:9px;color:var(--maroon);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.3rem}
+.sugg-tip{font-size:.79rem;color:var(--tx);line-height:1.6}
+
+/* ── ROADMAP ── */
+.rm-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem}
+@media(max-width:720px){.rm-wrap{grid-template-columns:1fr}}
+.rm-phase{background:var(--card2);border:1px solid var(--b);border-radius:8px;padding:.85rem}
+.rm-phase-hdr{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.65rem;font-weight:700}
+.rm-item{display:flex;gap:.5rem;margin-bottom:.55rem;align-items:flex-start;font-size:.79rem;color:var(--tx);line-height:1.55}
+.rm-num{font-family:var(--mono);font-size:8px;font-weight:700;border-radius:3px;padding:1px 5px;flex-shrink:0;margin-top:1px}
+
+/* ── COMPARISON ENGINE ── */
 .cmp-hint{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin-bottom:.75rem;padding:.55rem .75rem;background:var(--bg-secondary);border-radius:6px;border:1px solid var(--b)}
 .cmp-hint-txt{font-size:.8rem;color:var(--mu);line-height:1.5}
 .cmp-hint-txt strong{color:var(--tx)}
@@ -395,8 +454,6 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .cmp-pick-meta{font-family:var(--mono);font-size:8px;color:var(--mu);letter-spacing:.04em;margin-top:1px}
 .cmp-pick-ts{font-size:8px;color:var(--mu);margin-top:1px}
 .cmp-pick-score{font-family:var(--mono);font-size:1.3rem;font-weight:700;flex-shrink:0;line-height:1}
-
-/* comparison table */
 .cmp-table-wrap{overflow-x:auto;border-radius:6px;border:1px solid var(--b);margin-bottom:.85rem}
 .cmp-table{min-width:100%;display:table;width:100%}
 .cmp-row{display:flex;border-bottom:1px solid var(--b)}
@@ -420,15 +477,10 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .cmp-delta{font-family:var(--mono);font-size:7.5px;padding:1px 5px;border-radius:2px;letter-spacing:.03em;white-space:nowrap}
 .cmp-delta.pos{background:var(--gd);color:var(--gr)}
 .cmp-delta.neg{background:var(--rd);color:var(--re)}
-.cmp-delta.neu{color:var(--mu)}
 .cmp-info-cell{border-right:1px solid var(--b);color:var(--tx);font-size:.77rem}
 .cmp-info-cell:last-child{border-right:none}
-
-/* radar chart */
 .cmp-radar-wrap{background:var(--card);border:1px solid var(--b);border-radius:6px;padding:.85rem;margin-bottom:.75rem}
 .cmp-radar-title{font-family:var(--mono);font-size:9px;color:var(--maroon);letter-spacing:.08em;margin-bottom:.5rem;text-transform:uppercase}
-
-/* winner summary */
 .cmp-winner-box{background:var(--card);border:1px solid var(--b2);border-radius:6px;padding:.85rem}
 .cmp-winner-lbl{font-family:var(--mono);font-size:9px;color:var(--maroon);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem}
 .cmp-winner-main{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem;font-size:.85rem;padding:.5rem .7rem;background:var(--mint-dim);border-radius:5px;border:1px solid rgba(0,161,155,.2)}
@@ -437,3 +489,9 @@ footer{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px sol
 .cmp-win-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .cmp-win-name{font-size:.77rem;color:var(--tx);font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cmp-win-count{font-family:var(--mono);font-size:8px;flex-shrink:0;letter-spacing:.04em}
+
+/* ── AUTHOR CREDIT (visible 9pm–10pm only via JS) ── */
+.author-credit{display:none;font-family:var(--mono);font-size:9px;color:var(--mu);letter-spacing:.05em}
+.author-credit strong{color:var(--maroon)}
+.footer-gh-link{color:var(--mint);text-decoration:none;letter-spacing:.04em}
+.footer-gh-link:hover{text-decoration:underline;color:var(--mint-dark)}
