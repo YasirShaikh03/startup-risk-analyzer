@@ -72,7 +72,8 @@ function selBiz(el) {
   else { sf.classList.add('hidden'); if (streetMode) toggleMode(); }
 }
 
-function updateHC() { const e = g('hcnt'); if (e) e.textContent = history.length; }
+function updateHC() { const e = g('hcnt'); if (e) e.textContent = history.length; }/*         <!-- Author
+Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->*/
 function toggleHist() { const p = g('hpanel'); p.classList.toggle('hidden'); renderHL(); }
 function renderHL() {
   const el = g('hlist'); if (!el) return;
@@ -249,7 +250,8 @@ function explItems(d, sc2, isS) {
   } else {
     items.push({ f:'Traction (24%)', w:`${d.rev||'No revenue'} → ${sl(RV,d.rev,10)}/100 ${d.rev==='No revenue yet'?'— applies ×0.84 penalty':'— revenue de-risks everything'}`, im:`${sc2.tracS}/100`, t:sc2.tracS>=60?'p':'n' });
     items.push({ f:'Founder (18%)', w:`${d.fexp||'Unknown'} → ${Math.round((sc2.fm||.68)*100)}% multiplier applied to team score`, im:`×${(sc2.fm||.68).toFixed(2)}`, t:(sc2.fm||.68)>=.80?'p':'n' });
-    items.push({ f:'Market (20%)', w:`TAM + competition + trend → ${sc2.mktS}/100`, im:`${sc2.mktS}/100`, t:sc2.mktS>=60?'p':'n' });
+    items.push({ f:'Market (20%)', w:`TAM + competition + trend → ${sc2.mktS}/100`, im:`${sc2.mktS}/100`, t:sc2.mktS>=60?'p':'n' });/*         <!-- Author
+Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->*/
   }
   return items;
 }
@@ -637,7 +639,8 @@ function offlineAnalysis(d, scores) {
   const sc   = scores.compositeScore;
   const hi   = v => v >= 70;
   const lo   = v => v < 50;
-  const loc  = (d.area && d.city) ? (area + ', ' + city) : city;
+  const loc  = (d.area && d.city) ? (area + ', ' + city) : city;/*         <!-- Author
+Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->*/
   const mg   = d.margin > 0 ? d.margin + '%' : 'undefined';
 
   // summary
@@ -760,7 +763,8 @@ function offlineAnalysis(d, scores) {
   if (sc >= 75) verdict = n + ' is a ' + (isS ? 'well-run, high-potential street business' : 'fundable, scalable startup') + ' with the right fundamentals in place — execute on the 5 priority actions above and the next 12 months will compound significantly.';
   else if (sc >= 60) verdict = n + ' has real potential currently constrained by ' + (isS ? (lo(scores.ldom) ? 'location and licensing gaps' : 'digital presence and aggregator absence') : (lo(scores.tracS) ? 'lack of revenue traction' : 'team and funding gaps')) + ' — fix these two levers and the score jumps 15–20 points within 90 days.';
   else if (sc >= 45) verdict = n + ' is at the critical inflection point where the next 60 days of focused execution will determine whether this becomes a real business or stays a side project — the fundamentals are present, the urgency is not.';
-  else verdict = n + ' needs structural changes, not optimizations, before growth is meaningful — the specific gaps are clear and fixable within 3 months with the right prioritization and discipline.';
+  else verdict = n + ' needs structural changes, not optimizations, before growth is meaningful — the specific gaps are clear and fixable within 3 months with the right prioritization and discipline.';/*         <!-- Author
+Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->*/
 
   // hidden insight
   var hidden = '';
@@ -866,7 +870,8 @@ function renderBenchmark(d, sc2, isS) {
     { label: 'Profitability',   user: sc2.prof,  bench: avg.prof  },
     { label: 'Scalability',     user: sc2.scal,  bench: avg.scal  },
     { label: 'Local Dominance', user: sc2.ldom,  bench: avg.ldom  },
-    { label: 'Overall Score',   user: sc2.compositeScore, bench: avg.comp },
+    { label: 'Overall Score',   user: sc2.compositeScore, bench: avg.comp },/*         <!-- Author
+Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->*/
   ];
 
   const rows = dims.map(dim => {
@@ -918,7 +923,8 @@ function initForecast(d, sc2) {
 function updateForecast() {
   const d  = currentAnalysisData;
   if (!d) return;
-  const gr     = parseFloat((g('fc-growth') || {value:'10'}).value) / 100;
+  const gr     = parseFloat((g('fc-growth') || {value:'10'}).value) / 100;/*         <!-- Author
+Yasir Shaikh GitHub: https://github.com/YasirShaikh03 -->*/
   const seasMult = parseFloat((g('fc-season') || {value:'1'}).value);
   const scenario = (g('fc-scenario') || {value:'base'}).value;
   const fv = g('fc-growth-val');
