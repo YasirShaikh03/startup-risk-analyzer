@@ -223,7 +223,7 @@ This project was developed as part of my **Semester 6 Mini Project (B.E. Electro
 
 ---
 
-## 📌 Project Title
+## 📌  AI Startup Risk Analyzer
 
 AI-Based Startup Risk Analyzer and Idea Generation System
 
